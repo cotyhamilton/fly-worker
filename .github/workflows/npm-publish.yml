@@ -26,17 +26,17 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: Check latest package version
         run: |
-          latest=$(npm view strapi-hook-redis-connection@latest version)
-          betaPlus=$(npm view strapi-hook-redis-connection@beta version)
+          latest=$(npm view fly-worker@latest version)
+          betaPlus=$(npm view fly-worker@beta version)
           beta="$(cut -d'-' -f1 <<<$betaPlus)"
           echo "latest: $latest"
           echo "beta: $beta"
           if [ "$(printf '%s\n' "$latest" "$beta" | sort -V | tail -n1)" = "$latest" ]; then
               echo "using latest as base version"
-              npm version --no-git-tag-version $(npm view strapi-hook-redis-connection@latest version) --allow-same-version
+              npm version --no-git-tag-version $(npm view fly-worker@latest version) --allow-same-version
           else
               echo "using beta as base version"
-              npm version --no-git-tag-version $(npm view strapi-hook-redis-connection@beta version) --allow-same-version
+              npm version --no-git-tag-version $(npm view fly-worker@beta version) --allow-same-version
           fi
       - name: Version Package
         run: npm version --no-git-tag-version prerelease --preid=beta
