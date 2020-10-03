@@ -1,0 +1,25 @@
+{
+  "name": "fly-worker",
+  "version": "0.1.0",
+  "description": "",
+  "main": "./lib",
+  "files": ["lib"],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cotyhamilton/fly-worker.git"
+  },
+  "keywords": [
+    "web worker",
+    "pass function to web worker",
+    "generic web worker"
+  ],
+  "author": "Coty Hamilton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cotyhamilton/fly-worker/issues"
+  },
+  "homepage": "https://github.com/cotyhamilton/fly-worker#readme"
+}
