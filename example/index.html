@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>FlyWorker</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <p id="random">random</p>
+            <p>Find Primes</p>
+            <label for="from">From:</label>
+            <input name="from" id="from" value="0" />
+            <label for="to">To:</label>
+            <input name="to" id="to" value="500000" />
+            <br />
+            <button id="blocking">blocking</button>
+            <button id="non-blocking">non blocking</button>
+            <br />
+            <textarea id="result"></textarea>
+            <div class="code">
+                <pre>
+function findPrimes(fromNumber, toNumber) {
+    var list = [];
+    for (var i = fromNumber; i <= toNumber; i++) {
+        if (i > 1) list.push(i);
+    }
+
+    var maxDiv = Math.round(Math.sqrt(toNumber));
+    var primes = [];
+
+    for (var i = 0; i < list.length; i++) {
+        var failed = false;
+        for (var j = 2; j <= maxDiv; j++) {
+            if ((list[i] != j) && (list[i] % j == 0)) {
+                failed = true;
+            } else if ((j == maxDiv) && (failed == false)) {
+                primes.push(list[i]);
+            }
+        }
+    }
+
+    return primes;
+}
+
+const worker = new FlyWorker();
+
+const primes = await worker.exec(findPrimes, 0, 500000);
+                </pre>
+            </div>
+        </div>
+    </div>
+    <script src="main.js" type="module"></script>
+</body>
+
+</html>

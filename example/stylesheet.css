@@ -1,0 +1,24 @@
+.container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 400px;
+}
+
+.main {
+    text-align: center;
+}
+
+#result {
+    border: 1px solid black;
+    min-height: 400px;
+    width: 400px;
+    max-width: 100vw;
+}
+
+.code {
+    min-width: 400px;
+    max-width: 100vw;
+    text-align: left;
+    overflow: scroll;
+}
