@@ -1,5 +1,7 @@
 # fly-worker
 
+[![npm version](https://img.shields.io/npm/v/fly-worker.svg)](https://www.npmjs.org/package/fly-worker)
+
 ## Pass a function to a web worker
 
 (or worker on the fly, or generic web worker)
@@ -26,3 +28,6 @@ const worker = new FlyWorker();
 })();
 
 ```
+
+Live example here
+https://cotyhamilton.github.io/fly-worker/example/
