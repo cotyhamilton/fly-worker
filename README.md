@@ -1,6 +1,7 @@
 # fly-worker
 
 [![npm version](https://img.shields.io/npm/v/fly-worker.svg)](https://www.npmjs.org/package/fly-worker)
+[![npm version](https://img.shields.io/npm/dt/fly-worker.svg)](https://www.npmjs.org/package/fly-worker)
 
 ## Pass a function to a web worker
 
